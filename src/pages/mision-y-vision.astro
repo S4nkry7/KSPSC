@@ -1,0 +1,23 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'KSP - Misión y Visión',
+};
+---
+<Layout metadata={metadata}>
+  <Features2
+    title="Misión"
+    subtitle="Crear y mantener una actitud positiva y de vanguardia que nos permita ofrecer a nuestros clientes servicios integrales de calidad, teniendo presente en todo momento la aplicación del control de calidad a los trabajos desempeñados por la firma."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <Features2
+    title="Visión"
+    subtitle="Asegurar la permanencia de la organización a través de la institucionalización, diversidad y la versatilidad de los servicios que ofrecemos, reconociendo que cada proyecto se constituye como un reto individual y de la firma."
+  />
+</Layout>

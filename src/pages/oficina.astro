@@ -1,0 +1,48 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'KSP - Oficina',
+};
+
+---
+<Layout metadata={metadata}>
+    <Features2
+      title="Oficina"
+      tagline="Components"
+      columns={1}
+      items={[
+        {
+          title: 'Dirección',
+          description:
+            'Indiana 260- 103 y 104, Colonia Ciudad de los Deportes en la Ciudad de México. C.P. 03710.',
+          icon: 'tabler:school',
+        },
+        {
+          title: 'Teléfono',
+          description:
+            '(52) (55) 5598.9626',
+          icon: 'tabler:home-star',
+        },
+      ]}
+    >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+
+  </Features2>
+
+  <div class="w-full flex justify-center bg-blue-50 dark:bg-transparent">
+    <div class="w-4/5 p-4">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.666931816424!2d-99.17962238936035!3d19.383569281809816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff9d65ad2953%3A0x5294b7bf4bde4532!2sC.%20Indiana%20260-103%20y%20104%2C%20Cd.%20de%20los%20Deportes%2C%20Benito%20Ju%C3%A1rez%2C%2003710%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1720503164459!5m2!1ses-419!2smx" 
+        class='w-full h-72' 
+        allowfullscreen="true" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+</Layout>

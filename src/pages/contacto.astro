@@ -1,0 +1,40 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+
+const metadata = {
+  title: 'KSP - Contacto',
+};
+---
+
+<Layout metadata={metadata}>
+  <ContactUs
+    id="form"
+    button='Enviar'
+    title="Póngase en contacto con nosotros"
+    inputs={[
+      {
+        type: 'text',
+        name: 'nombre',
+        label: 'Nombre:',
+      },
+      {
+        type: 'email',
+        name: 'correo',
+        label: 'Correo:',
+      },
+      {
+        type: 'number',
+        name: 'tel',
+        label: 'Teléfono:',
+      },
+    ]}
+    textarea={{
+      label: 'Mensaje:',
+    }}
+    disclaimer={{
+      label:
+        'Al enviar este formulario de contacto, usted reconoce y acepta la recopilación de su información personal.',
+    }}
+  />
+</Layout>

@@ -6,6 +6,7 @@ const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
   tagline,
+  esJustificado = false,
   classes = {},
 } = Astro.props;
 
@@ -14,11 +15,16 @@ const {
   title: titleClass = 'text-3xl md:text-4xl ',
   subtitle: subtitleClass = 'text-xl',
 } = classes;
+
+
+const alignmentClass = esJustificado ? 'text-justify' : 'text-center';
+
+const subtitleLines = subtitle ? subtitle.split('\n') : [];
 ---
 
 {
   (title || subtitle || tagline) && (
-    <div class={twMerge('mb-8 md:mx-auto md:mb-12 text-center', containerClass)}>
+    <div class={twMerge('mb-8 md:mx-auto md:mb-12', alignmentClass, containerClass)}>
       {tagline && (
         <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase" set:html={tagline} />
       )}
@@ -29,7 +35,11 @@ const {
         />
       )}
 
-      {subtitle && <p class={twMerge('mt-4 text-muted', subtitleClass)} set:html={subtitle} />}
+      {subtitleLines.length > 0 && subtitleLines.map((line, index) => (
+        <p key={index} class={twMerge('mt-4 text-muted', subtitleClass)}>
+          {line}
+        </p>
+      ))}
     </div>
   )
 }
