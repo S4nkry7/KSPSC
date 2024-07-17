@@ -30,7 +30,7 @@ export const headerData = {
       text: 'Contacto',
       href: '/contacto',
     },
-    /*{
+    {
       text: 'Homes',
       links: [
         {
@@ -137,7 +137,7 @@ export const headerData = {
           href: getPermalink('astro', 'tag'),
         },
       ],
-    },*/
+    },
   ],
 };
 

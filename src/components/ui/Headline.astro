@@ -24,7 +24,7 @@ const subtitleLines = subtitle ? subtitle.split('\n') : [];
 
 {
   (title || subtitle || tagline) && (
-    <div class={twMerge('mb-8 md:mx-auto md:mb-12', alignmentClass, containerClass)}>
+    <div data-aos="fade-up" class={twMerge('mb-8 md:mx-auto md:mb-12', alignmentClass, containerClass)}>
       {tagline && (
         <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase" set:html={tagline} />
       )}
@@ -40,6 +40,7 @@ const subtitleLines = subtitle ? subtitle.split('\n') : [];
           {line}
         </p>
       ))}
+      <script src="/src/components/AOS.js" type="module"></script>
     </div>
   )
 }
