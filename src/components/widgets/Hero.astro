@@ -24,7 +24,7 @@ const {
 const alignmentClass = esJustificado ? 'text-justify' : 'text-center';
 ---
 
-<section data-aos="fade-up"  class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
+<section data-aos="fade-up"  class="animate-blurred-fade-in relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <slot name="bg">
       {bg ? <Fragment set:html={bg} /> : null}
