@@ -7,32 +7,63 @@ const {
   title = '',
   subtitle = '',
   tagline = '',
-  items = [],
 
   id,
   isDark = false,
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
+
+const items = [
+  {
+    titulo: "2021",
+    descripcion: [
+      { nombre: "documento1.pdf", url: "/src/assets/PDF´S/2014/abril-30-primer-vencimiento-renovacion-inscripcion-registro-nacional.pdf documento1.pdf" },
+      { nombre: "documento2.pdf", url: "/path/to/2021/documento2.pdf" },
+    ],
+  },
+  {
+    titulo: "2022",
+    descripcion: [
+      { nombre: "documento1.pdf", url: "/path/to/2022/documento1.pdf" },
+      { nombre: "documento2.pdf", url: "/path/to/2022/documento2.pdf" },
+    ],
+  },
+  // más carpetas...
+];
 ---
 
-<WidgetWrapper id={id} isDark={isDark} data-aos="fade-up"  containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} data-aos="fade-up"  containerClass={`w-full ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
   <div data-aos="fade-up" class="mb-4 border-b border-gray-200 dark:border-gray-700 overflow-x-auto">
-    <ul class="flex justify-center whitespace-nowrap">
+    <ul class="flex p-1 rounded-xl bg-blue-gray-50/60 whitespace-nowrap" data-tabs="tabs" role="list">
       {
-        items && items.map(({ titulo, description }) => (
-          <li class="inline-block me-2">
-            <a href={`#${titulo}`} class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-blue-500 hover:border-blue-500 dark:hover:text-blue-500">{titulo}</a>
+        items && items.map(({ titulo }) => (
+          <li class="z-30 flex-auto text-center">
+            <a class="z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit hover:text-blue-500 hover:border-blue-500 dark:hover:text-blue-500 min-w-[8.33%]" data-tab-target={titulo} role="tab" aria-selected="true" aria-controls={`t${titulo}`}>
+              <span class="ml-1">{titulo}</span>
+            </a>
           </li>
         ))
       }
     </ul>
   </div>
-  <div data-aos="fade-up" id="2024" class="p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full">
-    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Profile Tab</h3>
-    <p class="mb-2">This is some placeholder content the Profile tab's associated content, clicking another tab will toggle the visibility of this one for the next.</p>
-    <p>The tab JavaScript swaps classes to control the content visibility and styling.</p> 
+  <div data-tab-content="" class="p-5" data-aos="fade-up">
+    {
+      items && items.map(({ titulo, descripcion }) => (
+      <div data-aos="fade-up" class="hidden opacity-0 rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6" id={`t${titulo}`} role="tabpanel">
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Comunicados año {titulo}:</h3>
+        <nav class="flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700">
+          {descripcion.map(({ nombre, url }) => (
+            <li class="list-disc" key={nombre}>
+              <a href={url} download class="me-4 hover:underline md:me-6 text-slate-400 hover:text-sky-400" >{nombre}</a>
+            </li>
+          ))}
+        </nav>
+      </div>
+      ))
+    }
   </div>
   <script src="/src/components/AOS.js" type="module"></script>
+  <script src="/src/utils/AnimacionTabs.js"></script>
 </WidgetWrapper>
