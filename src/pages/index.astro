@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
+import 'aos/dist/aos.css'
 import Hero from '~/components/widgets/Hero.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Header from '~/components/widgets/Header.astro';
@@ -330,4 +330,10 @@ const metadata = {
   />
 
   <script src="/src/components/AOS.js" type="module"></script>
+  <script> 
+    import AOS from "aos"; 
+    AOS.init({
+      duration: 1200, // Duración en milisegundos
+    });
+  </script>
 </Layout>
