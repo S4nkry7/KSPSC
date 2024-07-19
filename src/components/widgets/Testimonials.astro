@@ -12,27 +12,28 @@ const {
   testimonials = [],
   callToAction,
 
+  esJustificado = false,
+
   id,
   isDark = false,
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
+
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <Headline title={title} subtitle={subtitle} tagline={tagline} />
+  <Headline title={title} subtitle={subtitle} tagline={tagline}/>
 
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div data-aos="fade-up" class="grid sm:grid-cols-1 lg:grid-cols-1 gap-6">
     {
       testimonials &&
-        testimonials.map(({ title, testimonial, name, job, image }) => (
-          <div class="flex h-auto">
+        testimonials.map(({ title, testimonial, name, job, image, url }) => (
+          <div class="flex-auto">
             <div class="flex flex-col p-4 md:p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600">
               {title && <h2 class="text-lg font-medium leading-6 pb-4">{title}</h2>}
               {testimonial && (
-                <blockquote class="flex-auto">
-                  <p class="text-muted">" {testimonial} "</p>
-                </blockquote>
+                <p class=" flex-auto text-justify">{testimonial}</p>
               )}
 
               <hr class="border-slate-200 dark:border-slate-600 my-4" />
@@ -57,7 +58,7 @@ const {
 
                 <div class="grow ml-3 rtl:ml-0 rtl:mr-3">
                   {name && <p class="text-base font-semibold">{name}</p>}
-                  {job && <p class="text-xs text-muted">{job}</p>}
+                  {job && <a href={url} class="text-xs text-muted" target="_blank" rel="noopener noreferrer" download>{job}</a>}
                 </div>
               </div>
             </div>
@@ -72,4 +73,5 @@ const {
       </div>
     )
   }
+  <script src="/src/components/AOS.js" type="module"></script>
 </WidgetWrapper>

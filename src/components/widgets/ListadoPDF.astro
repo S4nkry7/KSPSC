@@ -1,7 +1,19 @@
 ---
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
-import { twMerge } from 'tailwind-merge';
+
+let items = []
+
+async function obtenerComunicaods() {
+  const response = await fetch('http://localhost:4321/listarArchivos.json');
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  return await response.json();
+}
+
+// src/data/fetchData.js
+items = await obtenerComunicaods();
 
 const {
   title = '',
@@ -13,24 +25,6 @@ const {
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
-
-const items = [
-  {
-    titulo: "2021",
-    descripcion: [
-      { nombre: "documento1.pdf", url: "/src/assets/PDF´S/2014/abril-30-primer-vencimiento-renovacion-inscripcion-registro-nacional.pdf documento1.pdf" },
-      { nombre: "documento2.pdf", url: "/path/to/2021/documento2.pdf" },
-    ],
-  },
-  {
-    titulo: "2022",
-    descripcion: [
-      { nombre: "documento1.pdf", url: "/path/to/2022/documento1.pdf" },
-      { nombre: "documento2.pdf", url: "/path/to/2022/documento2.pdf" },
-    ],
-  },
-  // más carpetas...
-];
 ---
 
 <WidgetWrapper id={id} isDark={isDark} data-aos="fade-up"  containerClass={`w-full ${classes?.container ?? ''}`} bg={bg}>
@@ -49,20 +43,34 @@ const items = [
     </ul>
   </div>
   <div data-tab-content="" class="p-5" data-aos="fade-up">
-    {
-      items && items.map(({ titulo, descripcion }) => (
-      <div data-aos="fade-up" class="hidden opacity-0 rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6" id={`t${titulo}`} role="tabpanel">
-        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Comunicados año {titulo}:</h3>
-        <nav class="flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700">
-          {descripcion.map(({ nombre, url }) => (
-            <li class="list-disc" key={nombre}>
-              <a href={url} download class="me-4 hover:underline md:me-6 text-slate-400 hover:text-sky-400" >{nombre}</a>
-            </li>
-          ))}
-        </nav>
-      </div>
-      ))
-    }
+    {items &&
+      items.map(({ titulo, descripcion }, index) => (
+        <div
+          data-aos="fade-up"
+          class={`${
+            index === 0 ? 'block opacity-100' : 'hidden opacity-0'
+          } rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6`}
+          id={`t${titulo}`}
+          role="tabpanel"
+        >
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+            Comunicados año {titulo}:
+          </h3>
+          <nav class="flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700">
+            {descripcion.map(({ nombre, url }) => (
+              <li class="list-disc" key={nombre}>
+                <a
+                  download="proposed_file_name"
+                  href={url}
+                  class="me-4 md:me-6 text-slate-400 hover:text-sky-400 cursor-pointer"
+                >
+                  {nombre}
+                </a>
+              </li>
+            ))}
+          </nav>
+        </div>
+      ))}
   </div>
   <script src="/src/components/AOS.js" type="module"></script>
   <script src="/src/utils/AnimacionTabs.js"></script>
