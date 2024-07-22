@@ -7,51 +7,6 @@ export const headerData = {
       href: '/',
     },
     {
-      text: '¿Quiénes somos?',
-      href: '/quienes-somos',
-    },
-    {
-      text: 'Misión y Visión',
-      href: '/mision-y-vision',
-    },
-    {
-      text: 'Nuestros servicios',
-      href: '/nuestros-servicios',
-    },
-    {
-      text: 'Oficina',
-      href: '/oficina',
-    },
-    {
-      text: 'Comunicados',
-      href: '/comunicados',
-    },
-    {
-      text: 'Contacto',
-      href: '/contacto',
-    },
-    {
-      text: 'Homes',
-      links: [
-        {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
-        },
-        {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
-        },
-        {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
-        },
-        {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
-        },
-      ],
-    },
-    {
       text: 'Pages',
       links: [
         {

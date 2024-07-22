@@ -8,6 +8,10 @@ import ContactUs from '~/components/widgets/Contact.astro';
 import Comunicados from '~/components/widgets/ListadoPDF.astro'
 import Testimonials from '~/components/widgets/Testimonials.astro';
 
+import { obtenerCVs } from "../obtenerCVs.js";
+
+const cvs = await obtenerCVs();
+
 const metadata = {
   title: 'Kluchnik Sánchez Perete – Contadores Públicos Certificados',
   ignoreTitleTemplate: false,
@@ -128,7 +132,7 @@ const metadata = {
           src: '/',
           alt: 'Jacobo Kluchnik Rutzka Imágen',
         },
-        url: "/cv/jkr-curriculum.pdf",
+        url: cvs[1],
       },
       {
         testimonial: `Socio`,
@@ -138,7 +142,7 @@ const metadata = {
           src: '/',
           alt: 'Alejandro Sánchez Perete Imágen',
         },
-        url: "/cv/asp-curriculum.pdf",
+        url: cvs[0],
       },
     ]}
   />
@@ -301,31 +305,27 @@ const metadata = {
   <!--Contacto -->
   <ContactUs
     id="contacto"
-    button='Enviar'
+    button='Enviar Correo'
     title="Póngase en contacto con nosotros"
     inputs={[
       {
         type: 'text',
-        name: 'nombre',
+        name: 'from_name',
         label: 'Nombre:',
       },
       {
         type: 'email',
-        name: 'correo',
+        name: 'from_email',
         label: 'Correo:',
       },
       {
-        type: 'number',
-        name: 'tel',
+        type: 'tel',
+        name: 'from_tel',
         label: 'Teléfono:',
       },
     ]}
     textarea={{
       label: 'Mensaje:',
-    }}
-    disclaimer={{
-      label:
-        'Al enviar este formulario de contacto, usted reconoce y acepta la recopilación de su información personal.',
     }}
   />
 
@@ -335,5 +335,43 @@ const metadata = {
     AOS.init({
       duration: 1200, // Duración en milisegundos
     });
+  </script>
+  <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script type="text/javascript">
+    emailjs.init('jy-3sfvppbWFx7Za7')
+  </script>
+
+  <script type="text/javascript">
+    document.getElementById("formularioMensajes")
+    .addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      document.getElementById('botonMensajes').click();
+
+      document.getElementById('botonMensajes').value = "Enviando correo";
+
+      const serviceID = 'default_service';
+      const templateID = 'template_ke4mbe7';
+
+      emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        showAlert();
+        document.getElementById('botonMensajes').value = 'Enviar Correo';
+      }, (err) => {
+        document.getElementById('botonMensajes').value = 'Enviar Correo';
+        alert(JSON.stringify(err));
+      });
+      
+
+      
+    });
+
+    function showAlert() {
+      const x = document.getElementById("snackbar");
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
   </script>
 </Layout>
