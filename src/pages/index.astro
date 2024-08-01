@@ -42,7 +42,7 @@ const metadata = {
   <!--Inicio -->
   <Hero
     id='inicio'
-    image={{ src: '~/assets/images/ksp-fija.jpg', alt: 'KSP-Fija' }}
+    image={{ src: 'images/ksp-fija.webp', alt: 'KSP-Fija' }}
   >
     <Fragment slot="title">
       Kluchnik Sánchez Perete – Contadores Públicos Certificados
@@ -50,54 +50,57 @@ const metadata = {
   </Hero>
 
   <!-- Features2 Widget ************** -->
+  <div class="relative">
+    <div data-aos="fade-up" class="absolute inset-0 bg-cover bg-center bg-no-repeat blur-sm" style={`background-image: url('images/GOPR0353.webp')`}></div>
+    <div class="relative z-10">
+    <Features2
+      title="Nuestros servicios"
+      id='inicio'
+      subtitle="Somos un grupo de profesionales de la contaduría pública, en el cual prestamos servicios relacionados con la misma, divididos en tres grandes áreas:"
+      columns = {2}
+      classes={{
+        title: 'text-white',
+        subtitle: 'text-slate-50',
+      }}
+      items={[
+        {
+          title: 'Auditoría ',
+          description: "Enfocada básicamente a la elaboración de dictámenes para efectos financieros y fiscales, así como también los relacionados con el IMSS, INFONAVIT, Impuestos Estatales y compra venta de acciones.",
+          icon: 'tabler:certificate',
+        },
+        {
+          title: 'Fiscal ',
+          description:
+            "Brindamos asesoría y planeación, siempre bajo el marco legal.",
+          icon: 'tabler:gavel',
+        },
+        {
+          title: 'Contabilidad ',
+          description:
+            'Apoyamos al proceso de la contabilidad, así como la elaboración de las declaraciones de impuestos y cuotas correspondientes.',
+          icon: 'tabler:calculator',
+        },
+        {
+          title: 'Otros Servicios',
+          description: "Elaboración de la nómina y peritajes en materia contable.",
+          icon: 'tabler:notes',
+        },
+      ]}
+    >
 
-  <Features2
-    title="Nuestros servicios"
-    id='inicio'
-    subtitle="Somos un grupo de profesionales de la contaduría pública, en el cual prestamos servicios relacionados con la misma, divididos en tres grandes áreas:"
-    columns = {2}
-    items={[
-      {
-        title: 'Auditoría ',
-        description: "Enfocada básicamente a la elaboración de dictámenes para efectos financieros y fiscales, así como también los relacionados con el IMSS, INFONAVIT, Impuestos Estatales y compra venta de acciones.",
-        icon: 'tabler:certificate',
-      },
-      {
-        title: 'Fiscal ',
-        description:
-          "Brindamos asesoría y planeación, siempre bajo el marco legal.",
-        icon: 'tabler:gavel',
-      },
-      {
-        title: 'Contabilidad ',
-        description:
-          'Apoyamos al proceso de la contabilidad, así como la elaboración de las declaraciones de impuestos y cuotas correspondientes.',
-        icon: 'tabler:calculator',
-      },
-      {
-        title: 'Otros Servicios',
-        description: "Elaboración de la nómina y peritajes en materia contable.",
-        icon: 'tabler:notes',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
+    </Features2>
 
-  <Hero
-    esJustificado
-  >
-    <Fragment slot="subtitle">
-      <p>Envíe un mensaje a través de nuestro <a class="inline-block hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href="#contacto">Formulario de Contacto</a> o llame directamente al teléfono (52) (55) 5598.9626</p>
-      <br>
-      <p><a class="inline-block hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href="#oficina">Nuestras oficinas</a> se encuentran en Indiana 260- 103 y 104, Colonia Ciudad de los Deportes en la Ciudad de México. C.P. 03710</p>
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Hero>
+    <Hero
+      esJustificado
+    >
+      <Fragment slot="subtitle">
+        <p class="text-slate-50 text-shadow">Envíe un mensaje a través de nuestro <a class="inline-block hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href="#contacto">Formulario de Contacto</a> o llame directamente al teléfono (52) (55) 5598.9626</p>
+        <br>
+        <p class="text-slate-50 text-shadow-[0_4px_8px_#6366f1]"><a class="inline-block hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href="#oficina">Nuestras oficinas</a> se encuentran en Indiana 260- 103 y 104, Colonia Ciudad de los Deportes en la Ciudad de México. C.P. 03710</p>
+      </Fragment>
+    </Hero>
+    </div>
+  </div>
 
 
 
@@ -106,40 +109,44 @@ const metadata = {
 
 
   <!-- Quienes somos -->
+  <div class="relative">
+    <div data-aos="fade-up" class="absolute inset-0 bg-cover bg-center bg-no-repeat blur-sm" style={`background-image: url('/images/G0010324.webp')`}></div>
+    <div class="relative z-10">
+      <Features2
+        esJustificado
+        id='quienes-somos'
+        title="¿Quiénes somos?"
+        subtitle="Nuestra firma nace en el año de 1973, fecha a partir de la cual hemos venido prestando los servicios profesionales ya mencionados, tiempo durante el cual tuvimos oportunidad de asociarnos con otra firma de contadores públicos, asociación que culminó en junio de 1987, fecha a partir de la cual tomamos nuestro actual nombre KSP, S. C. \nDurante este lapso, tuvimos la oportunidad de representar a una firma internacional de la contaduría pública y, al concluir esa representación, fuimos invitados a formar parte de un grupo de despachos con sedes básicamente en Europa, y en algunas otras sedes en ciudades importantes de los Estados Unidos de Norteamérica.\n Ambas relaciones fueron concluidas a instancia nuestra, por falta de reciprocidad."
+      />
 
-  <Features2
-    esJustificado
-    id='quienes-somos'
-    title="¿Quiénes somos?"
-    subtitle="Nuestra firma nace en el año de 1973, fecha a partir de la cual hemos venido prestando los servicios profesionales ya mencionados, tiempo durante el cual tuvimos oportunidad de asociarnos con otra firma de contadores públicos, asociación que culminó en junio de 1987, fecha a partir de la cual tomamos nuestro actual nombre KSP, S. C. \nDurante este lapso, tuvimos la oportunidad de representar a una firma internacional de la contaduría pública y, al concluir esa representación, fuimos invitados a formar parte de un grupo de despachos con sedes básicamente en Europa, y en algunas otras sedes en ciudades importantes de los Estados Unidos de Norteamérica.\n Ambas relaciones fueron concluidas a instancia nuestra, por falta de reciprocidad."
-  />
-
-  <Testimonials
-    id='quienes-somos'
-    title="Socios"
-    testimonials={[
-      {
-        testimonial: `Socio`,
-        name: 'Jacobo Kluchnik Rutzka',
-        job: 'Ver currículum',
-        image: {
-          src: '/',
-          alt: 'Jacobo Kluchnik Rutzka Imágen',
-        },
-        url: cvs[1],
-      },
-      {
-        testimonial: `Socio`,
-        name: 'Alejandro Sánchez Perete',
-        job: 'Ver currículum',
-        image: {
-          src: '/',
-          alt: 'Alejandro Sánchez Perete Imágen',
-        },
-        url: cvs[0],
-      },
-    ]}
-  />
+      <Testimonials
+        id='quienes-somos'
+        title="Socios"
+        testimonials={[
+          {
+            testimonial: `Socio`,
+            name: 'Jacobo Kluchnik Rutzka',
+            job: 'Ver currículum',
+            image: {
+              src: '/',
+              alt: 'Jacobo Kluchnik Rutzka Imágen',
+            },
+            url: cvs[1],
+          },
+          {
+            testimonial: `Socio`,
+            name: 'Alejandro Sánchez Perete',
+            job: 'Ver currículum',
+            image: {
+              src: '/',
+              alt: 'Alejandro Sánchez Perete Imágen',
+            },
+            url: cvs[0],
+          },
+        ]}
+      />
+    </div>
+  </div>
 
 
 
@@ -148,85 +155,89 @@ const metadata = {
 
 
   <!--Mision y Vision -->
-  <Features2
-  id='mision-vision'
-    title="Misión"
-    subtitle="Crear y mantener una actitud positiva y de vanguardia que nos permita ofrecer a nuestros clientes servicios integrales de calidad, teniendo presente en todo momento la aplicación del control de calidad a los trabajos desempeñados por la firma."
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
+  <div class="relative">
+    <div data-aos="fade-up" class="absolute inset-0 bg-cover bg-center bg-no-repeat blur-sm" style={`background-image: url('images/GOPR0303.webp')`}></div>
+    <div class="relative z-10">
+      <Features2
+      id='mision-vision'
+        title="Misión"
+        subtitle="Crear y mantener una actitud positiva y de vanguardia que nos permita ofrecer a nuestros clientes servicios integrales de calidad, teniendo presente en todo momento la aplicación del control de calidad a los trabajos desempeñados por la firma."
+      >
+      </Features2>
 
-  <Features2
-    id='mision-vision'
-    title="Visión"
-    subtitle="Asegurar la permanencia de la organización a través de la institucionalización, diversidad y la versatilidad de los servicios que ofrecemos, reconociendo que cada proyecto se constituye como un reto individual y de la firma."
-  />
+      <Features2
+        id='mision-vision'
+        title="Visión"
+        subtitle="Asegurar la permanencia de la organización a través de la institucionalización, diversidad y la versatilidad de los servicios que ofrecemos, reconociendo que cada proyecto se constituye como un reto individual y de la firma."
+      />
+    </div>
+  </div>
 
 
 
   <!--Nuestros Servicios -->
-  <Features2
-    id='nuestros-servicios'
-    title="Nuestros servicios"
-    subtitle="Los servicios profesionales que prestamos en las áreas descritas, están bajo la responsabilidad del gerente de cada una de ellas, quien tiene a su cargo a un grupo de profesionales, que van desde ayudantes cursando los últimos semestres de la carrera, hasta encargados con un completo dominio de su especialidad. \n Por lo que al aspecto fiscal legal se refiere, coordinamos estos trabajos con varias firmas de abogados de reconocido prestigio. \nNuestros principales clientes se encuentran en los siguientes sectores:"
-    esJustificado
-    items={[
-      {
-        title: 'Textil',
-        icon: 'tabler:texture',
-      },
-      {
-        title: 'Donatarias',
-        icon: 'tabler:cash-register',
-      },
-      {
-        title: 'Ecología',
-        icon: 'tabler:trees',
-      },
-      {
-        title: 'Restaurantes',
-        icon: 'tabler:pizza',
-      },
-      {
-        title: 'Telecomunicaciones',
-        icon: 'tabler:router',
-      },
-      {
-        title: 'Turístico',
-        icon: 'tabler:photo',
-      },
-      {
-        title: 'Inmobiliario',
-        icon: 'tabler:home',
-      },
-      {
-        title: 'Deportivo social',
-        icon: 'tabler:building-stadium',
-      },
-      {
-        title: 'Plásticos',
-        icon: 'tabler:bottle-filled',
-      },
-      {
-        title: 'Educativo',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Publicidad y de servicios',
-        icon: 'tabler:speakerphone',
-      },
-      {
-        title: 'Otros',
-        icon: 'tabler:file-dots',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
+  <div class="relative">
+    <div data-aos="fade-up" class="absolute inset-0 bg-cover bg-center bg-no-repeat blur-sm" style={`background-image: url('images/GoProBlanco.webp')`}></div>
+    <div class="relative z-10">
+      <Features2
+        id='nuestros-servicios'
+        title="Nuestros servicios"
+        subtitle="Los servicios profesionales que prestamos en las áreas descritas, están bajo la responsabilidad del gerente de cada una de ellas, quien tiene a su cargo a un grupo de profesionales, que van desde ayudantes cursando los últimos semestres de la carrera, hasta encargados con un completo dominio de su especialidad. \n Por lo que al aspecto fiscal legal se refiere, coordinamos estos trabajos con varias firmas de abogados de reconocido prestigio. \nNuestros principales clientes se encuentran en los siguientes sectores:"
+        esJustificado
+        items={[
+          {
+            title: 'Textil',
+            icon: 'tabler:texture',
+          },
+          {
+            title: 'Donatarias',
+            icon: 'tabler:cash-register',
+          },
+          {
+            title: 'Ecología',
+            icon: 'tabler:trees',
+          },
+          {
+            title: 'Restaurantes',
+            icon: 'tabler:pizza',
+          },
+          {
+            title: 'Telecomunicaciones',
+            icon: 'tabler:router',
+          },
+          {
+            title: 'Turístico',
+            icon: 'tabler:photo',
+          },
+          {
+            title: 'Inmobiliario',
+            icon: 'tabler:home',
+          },
+          {
+            title: 'Deportivo social',
+            icon: 'tabler:building-stadium',
+          },
+          {
+            title: 'Plásticos',
+            icon: 'tabler:bottle-filled',
+          },
+          {
+            title: 'Educativo',
+            icon: 'tabler:school',
+          },
+          {
+            title: 'Publicidad y de servicios',
+            icon: 'tabler:speakerphone',
+          },
+          {
+            title: 'Otros',
+            icon: 'tabler:file-dots',
+          },
+        ]}
+      >
+      </Features2>
+    </div>
+  </div>
 
 
 
@@ -234,40 +245,45 @@ const metadata = {
 
 
   <!--Oficina -->
-  <Features2
-      id='oficina'
-      title="Oficina"
-      columns={1}
-      items={[
-        {
-          title: 'Dirección',
-          description:
-            'Indiana 260- 103 y 104, Colonia Ciudad de los Deportes en la Ciudad de México. C.P. 03710.',
-          icon: 'tabler:school',
-        },
-        {
-          title: 'Teléfono',
-          description:
-            '(52) (55) 5598.9626',
-          icon: 'tabler:home-star',
-        },
-      ]}
-    >
+  <div class="relative">
+    <div data-aos="fade-up" class="absolute inset-0 bg-cover bg-center bg-no-repeat blur-sm" style={`background-image: url('images/KSPExterior.webp')`}></div>
+    <div class="relative z-10">
+      <Features2
+          id='oficina'
+          title="Oficina"
+          columns={1}
+          items={[
+            {
+              title: 'Dirección',
+              description:
+                'Indiana 260- 103 y 104, Colonia Ciudad de los Deportes en la Ciudad de México. C.P. 03710.',
+              icon: 'tabler:school',
+            },
+            {
+              title: 'Teléfono',
+              description:
+                '(52) (55) 5598.9626',
+              icon: 'tabler:home-star',
+            },
+          ]}
+        >
 
-  </Features2>
+      </Features2>
 
-  <div data-aos="fade-up"  class="w-full flex justify-center dark:bg-transparent" id='oficina'>
-    <div class="w-4/5 p-4">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.666931816424!2d-99.17962238936035!3d19.383569281809816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff9d65ad2953%3A0x5294b7bf4bde4532!2sC.%20Indiana%20260-103%20y%20104%2C%20Cd.%20de%20los%20Deportes%2C%20Benito%20Ju%C3%A1rez%2C%2003710%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1720503164459!5m2!1ses-419!2smx" 
-        class='w-full h-72' 
-        allowfullscreen="true" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+      <div data-aos="fade-up"  class="w-full flex justify-center dark:bg-transparent" id='oficina'>
+        <div class="w-4/5 p-4">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.666931816424!2d-99.17962238936035!3d19.383569281809816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff9d65ad2953%3A0x5294b7bf4bde4532!2sC.%20Indiana%20260-103%20y%20104%2C%20Cd.%20de%20los%20Deportes%2C%20Benito%20Ju%C3%A1rez%2C%2003710%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1720503164459!5m2!1ses-419!2smx" 
+            class='w-full h-72' 
+            allowfullscreen="true" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
     </div>
   </div>
-
 
 
 
@@ -279,7 +295,7 @@ const metadata = {
   >
 
   <Fragment slot="bg">
-    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="absolute inset-0 bg-sky-600 dark:bg-transparent"></div>
   </Fragment>
 
   </Comunicados>
@@ -289,33 +305,39 @@ const metadata = {
 
   
 
+  <div class="relative">
+    <div data-aos="fade-up" class="absolute inset-0 bg-cover bg-center bg-no-repeat blur-sm" style={`background-image: url('/images/GOPR0345.webp')`}></div>
+    <div class="relative z-10">
+      <!--Contacto -->
+      <ContactUs
+        id="contacto"
+        button='Enviar Correo'
+        title="Póngase en contacto con nosotros"
+        inputs={[
+          {
+            type: 'text',
+            name: 'from_name',
+            label: 'Nombre:',
+          },
+          {
+            type: 'email',
+            name: 'from_email',
+            label: 'Correo:',
+          },
+          {
+            type: 'tel',
+            name: 'from_tel',
+            label: 'Teléfono:',
+          },
+        ]}
+        textarea={{
+          label: 'Mensaje:',
+        }}
+      />
+    </div>
+  </div>
 
-  <!--Contacto -->
-  <ContactUs
-    id="contacto"
-    button='Enviar Correo'
-    title="Póngase en contacto con nosotros"
-    inputs={[
-      {
-        type: 'text',
-        name: 'from_name',
-        label: 'Nombre:',
-      },
-      {
-        type: 'email',
-        name: 'from_email',
-        label: 'Correo:',
-      },
-      {
-        type: 'tel',
-        name: 'from_tel',
-        label: 'Teléfono:',
-      },
-    ]}
-    textarea={{
-      label: 'Mensaje:',
-    }}
-  />
+
 
   <script src="/src/components/AOS.js" type="module"></script>
   <script> 

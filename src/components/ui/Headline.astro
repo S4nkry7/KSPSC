@@ -30,13 +30,13 @@ const subtitleLines = subtitle ? subtitle.split('\n') : [];
       )}
       {title && (
         <h2
-          class={twMerge('font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl', titleClass)}
+          class={twMerge('font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl text-white', titleClass)}
           set:html={title}
         />
       )}
 
       {subtitleLines.length > 0 && subtitleLines.map((line, index) => (
-        <p key={index} class={twMerge('mt-4 text-muted', subtitleClass)}>
+        <p key={index} class={twMerge('mt-4 text-muted text-slate-300', subtitleClass)}>
           {line}
         </p>
       ))}
