@@ -17,6 +17,9 @@ module.exports = {
         sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
         serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
         heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
+        'courier': ['"Courier New"', 'monospace'],
+        'brioso': ['"Brioso Pro Light Poster"', 'serif'],
+        'washington': ['"Washington Display Light"', 'sans-serif'],
       },
       textShadow: {
         sm: '0 1px 2px var(--tw-shadow-color)',

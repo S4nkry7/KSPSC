@@ -33,7 +33,7 @@ const alignmentClass = esJustificado ? 'text-justify' : 'text-center';
   <div data-aos="fade-up"  class="relative w-full mx-auto px-4 py-8 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
     <div class="">
-      <div class={twMerge('pb-10 md:pb-16 max-w-5xl mx-auto', alignmentClass)}>
+      <div class={twMerge('pb-10 md:pb-16 max-w-4xl mx-auto', alignmentClass)}>
         {
           tagline && (
             <p
@@ -45,7 +45,7 @@ const alignmentClass = esJustificado ? 'text-justify' : 'text-center';
         {
           title && (
             <h1
-              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+              class="text-5xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
               set:html={title}
             />
           )

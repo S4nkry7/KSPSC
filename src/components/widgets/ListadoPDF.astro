@@ -2,23 +2,12 @@
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
 
-let items = []
+var items = []
 
 
 import { obtenerComunicados } from "../../obtenerComunicados.js";
 
 items = await obtenerComunicados();
-
-/*async function obtenerComunicaods() {
-  const response = await fetch('http://localhost:4321/listarArchivos.json');
-  if (!response.ok) {
-    throw new Error('Network response was not ok');
-  }
-  return await response.json();
-}
-
-// src/data/fetchData.js
-items = await obtenerComunicaods();*/
 
 const {
   title = '',
@@ -79,4 +68,5 @@ const {
   </div>
   <script src="/src/components/AOS.js" type="module"></script>
   <script src="/src/utils/AnimacionTabs.js"></script>
+  <script src="/src/obtenerComunicados.js"></script>
 </WidgetWrapper>

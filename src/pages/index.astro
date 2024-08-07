@@ -45,62 +45,12 @@ const metadata = {
     image={{ src: 'images/ksp-fija.webp', alt: 'KSP-Fija' }}
   >
     <Fragment slot="title">
-      Kluchnik Sánchez Perete – Contadores Públicos Certificados
+      <div class="font-courier">
+        kluchnik sánchez perete, s.c. <br>
+        contadores públicos certificados
+      </div>
     </Fragment>
   </Hero>
-
-  <!-- Features2 Widget ************** -->
-  <div class="relative">
-    <div data-aos="fade-up" class="absolute inset-0 bg-cover bg-center bg-no-repeat blur-sm" style={`background-image: url('images/GOPR0353.webp')`}></div>
-    <div class="relative z-10">
-    <Features2
-      title="Nuestros servicios"
-      id='inicio'
-      subtitle="Somos un grupo de profesionales de la contaduría pública, en el cual prestamos servicios relacionados con la misma, divididos en tres grandes áreas:"
-      columns = {2}
-      classes={{
-        title: 'text-white',
-        subtitle: 'text-slate-50',
-      }}
-      items={[
-        {
-          title: 'Auditoría ',
-          description: "Enfocada básicamente a la elaboración de dictámenes para efectos financieros y fiscales, así como también los relacionados con el IMSS, INFONAVIT, Impuestos Estatales y compra venta de acciones.",
-          icon: 'tabler:certificate',
-        },
-        {
-          title: 'Fiscal ',
-          description:
-            "Brindamos asesoría y planeación, siempre bajo el marco legal.",
-          icon: 'tabler:gavel',
-        },
-        {
-          title: 'Contabilidad ',
-          description:
-            'Apoyamos al proceso de la contabilidad, así como la elaboración de las declaraciones de impuestos y cuotas correspondientes.',
-          icon: 'tabler:calculator',
-        },
-        {
-          title: 'Otros Servicios',
-          description: "Elaboración de la nómina y peritajes en materia contable.",
-          icon: 'tabler:notes',
-        },
-      ]}
-    >
-
-    </Features2>
-
-    <Hero
-      esJustificado
-    >
-      <Fragment slot="subtitle">
-        <p class="text-slate-50 text-shadow">Envíe un mensaje a través de nuestro <a class="inline-block hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href="#contacto">Formulario de Contacto</a> o llame directamente al teléfono (52) (55) 5598.9626</p>
-        <br>
-        <p class="text-slate-50 text-shadow-[0_4px_8px_#6366f1]"><a class="inline-block hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href="#oficina">Nuestras oficinas</a> se encuentran en Indiana 260- 103 y 104, Colonia Ciudad de los Deportes en la Ciudad de México. C.P. 03710</p>
-      </Fragment>
-    </Hero>
-    </div>
-  </div>
 
 
 
@@ -180,9 +130,56 @@ const metadata = {
     <div data-aos="fade-up" class="absolute inset-0 bg-cover bg-center bg-no-repeat blur-sm" style={`background-image: url('images/GoProBlanco.webp')`}></div>
     <div class="relative z-10">
       <Features2
+      esJustificado
+      title="Nuestros servicios"
+      id='nuestros-servicios'
+      subtitle="Los servicios profesionales que prestamos en las áreas descritas, están bajo la responsabilidad del gerente de cada una de ellas, quien tiene a su cargo a un grupo de profesionales, que van desde ayudantes cursando los últimos semestres de la carrera, hasta encargados con un completo dominio de su especialidad. \n Por lo que al aspecto fiscal legal se refiere, coordinamos estos trabajos con varias firmas de abogados de reconocido prestigio. \nSomos un grupo de profesionales de la contaduría pública, en el cual prestamos servicios relacionados con la misma, divididos en tres grandes áreas:"
+      columns = {2}
+      classes={{
+        title: 'text-white',
+        subtitle: 'text-slate-50',
+      }}
+      items={[
+        {
+          title: 'Auditoría ',
+          description: "Enfocada básicamente a la elaboración de dictámenes para efectos financieros y fiscales, así como también los relacionados con el IMSS, INFONAVIT, Impuestos Estatales y compra venta de acciones.",
+          icon: 'tabler:certificate',
+        },
+        {
+          title: 'Fiscal ',
+          description:
+            "Brindamos asesoría y planeación, siempre bajo el marco legal.",
+          icon: 'tabler:gavel',
+        },
+        {
+          title: 'Contabilidad ',
+          description:
+            'Apoyamos al proceso de la contabilidad, así como la elaboración de las declaraciones de impuestos y cuotas correspondientes.',
+          icon: 'tabler:calculator',
+        },
+        {
+          title: 'Otros Servicios',
+          description: "Elaboración de la nómina y peritajes en materia contable.",
+          icon: 'tabler:notes',
+        },
+      ]}
+    >
+
+    </Features2>
+
+    <Hero
+      esJustificado
+    >
+      <Fragment slot="subtitle">
+        <p class="text-slate-50 text-shadow">Envíe un mensaje a través de nuestro <a class="inline-block hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href="#contacto">Formulario de Contacto</a> o llame directamente al teléfono (52) (55) 5598.9626</p>
+        <br>
+        <p class="text-slate-50 text-shadow-[0_4px_8px_#6366f1]"><a class="inline-block hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href="#oficina">Nuestras oficinas</a> se encuentran en Indiana 260- 103 y 104, Colonia Ciudad de los Deportes en la Ciudad de México. C.P. 03710</p>
+      </Fragment>
+    </Hero>
+      <Features2
         id='nuestros-servicios'
-        title="Nuestros servicios"
-        subtitle="Los servicios profesionales que prestamos en las áreas descritas, están bajo la responsabilidad del gerente de cada una de ellas, quien tiene a su cargo a un grupo de profesionales, que van desde ayudantes cursando los últimos semestres de la carrera, hasta encargados con un completo dominio de su especialidad. \n Por lo que al aspecto fiscal legal se refiere, coordinamos estos trabajos con varias firmas de abogados de reconocido prestigio. \nNuestros principales clientes se encuentran en los siguientes sectores:"
+        title=""
+        subtitle="Nuestros principales clientes se encuentran en los siguientes sectores:"
         esJustificado
         items={[
           {
@@ -256,14 +253,14 @@ const metadata = {
             {
               title: 'Dirección',
               description:
-                'Indiana 260- 103 y 104, Colonia Ciudad de los Deportes en la Ciudad de México. C.P. 03710.',
-              icon: 'tabler:school',
+                'Indiana 260- 103 y 104, Colonia Ciudad de los Deportes. C.P. 03710, Ciudad de México.',
+              icon: 'tabler:brand-google-maps',
             },
             {
               title: 'Teléfono',
               description:
-                '(52) (55) 5598.9626',
-              icon: 'tabler:home-star',
+                '(52) (55) 5598-9626',
+              icon: 'tabler:phone',
             },
           ]}
         >
@@ -271,7 +268,7 @@ const metadata = {
       </Features2>
 
       <div data-aos="fade-up"  class="w-full flex justify-center dark:bg-transparent" id='oficina'>
-        <div class="w-4/5 p-4">
+        <div class="w-4/5 h-4/5 py-5 ">
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.666931816424!2d-99.17962238936035!3d19.383569281809816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff9d65ad2953%3A0x5294b7bf4bde4532!2sC.%20Indiana%20260-103%20y%20104%2C%20Cd.%20de%20los%20Deportes%2C%20Benito%20Ju%C3%A1rez%2C%2003710%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1720503164459!5m2!1ses-419!2smx" 
             class='w-full h-72' 

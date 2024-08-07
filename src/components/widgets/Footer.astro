@@ -15,7 +15,10 @@ const { footNote = '', theme = 'light' } = Astro.props;
     <div class="grid py-8 md:py-12">
       <div class="col-span-12 lg:col-span-4">
         <div class="mb-2">
-          <a class="inline-block font-bold text-xl" href={getHomePermalink()}>{SITE?.name} <Fragment set:html={footNote} /></a>
+          <div class="font-courier">
+          <a class="inline-block font-bold text-xl">kluchnik sánchez perete, s.c. <br>
+            contadores públicos certificados <Fragment set:html={footNote} /></a>
+          </div>
         </div>
       </div>
     </div>

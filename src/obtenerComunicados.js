@@ -1,7 +1,12 @@
 import { ref, listAll, getDownloadURL } from "firebase/storage";
 import { storage } from "./firebaseConfig";
 
+function mostrarAlerta() {
+  console.log("This message will be logged to the console.");
+}
+
 async function obtenerComunicados() {
+  mostrarAlerta()
   const comunicadosRef = ref(storage, 'Comunicados');
   const result = await listAll(comunicadosRef);
   
@@ -10,9 +15,10 @@ async function obtenerComunicados() {
     const folderResult = await listAll(folderRef);
     const filesPromises = folderResult.items.map(async (itemRef) => {
       const fileUrl = await getDownloadURL(itemRef);
+      const uniqueUrl = `${fileUrl}?t=${Date.now()}`;
       return {
         nombre: itemRef.name,
-        url: fileUrl
+        url: uniqueUrl
       };
     });
     
