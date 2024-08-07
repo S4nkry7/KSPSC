@@ -1,12 +1,7 @@
 import { ref, listAll, getDownloadURL } from "firebase/storage";
 import { storage } from "./firebaseConfig";
 
-function mostrarAlerta() {
-  console.log("This message will be logged to the console.");
-}
-
 async function obtenerComunicados() {
-  mostrarAlerta()
   const comunicadosRef = ref(storage, 'Comunicados');
   const result = await listAll(comunicadosRef);
   
