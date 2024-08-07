@@ -2,12 +2,8 @@
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
 
-var items = []
+let items = [];
 
-
-import { obtenerComunicados } from "../../obtenerComunicados.js";
-
-items = await obtenerComunicados();
 
 const {
   title = '',
@@ -19,6 +15,14 @@ const {
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
+
+const loadItems = async () => {
+  const { obtenerComunicados } = await import('../../obtenerComunicados.js');
+  items = await obtenerComunicados();
+};
+
+await loadItems();
+
 ---
 
 <WidgetWrapper id={id} isDark={isDark} data-aos="fade-up"  containerClass={`w-full ${classes?.container ?? ''}`} bg={bg}>
